@@ -5,7 +5,7 @@ require_once(dirname(__FILE__, 2). '/src/models/User.php');
 $user = new User(['name' => 'Lucas', 'email' => 'lucas@cod3r.com.br']);
 // echo $user->getSelect('id,name');
 
-echo User::getSelect(['id' => 1], 'name, email');
+echo User::getResultSetFromSelect(['id' => 1], 'name, email');
 echo '<br>';
-echo User::getSelect(['name' => 'Chaves', 'email' => 'chaves@cod3r.com.br']);
+echo User::getResultSetFromSelect(['name' => 'Chaves', 'email' => 'chaves@cod3r.com.br']);
 

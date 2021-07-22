@@ -25,9 +25,14 @@ class Model {
         $this->values[$key] = $value;
     }
 
-    public static function getSelect($filters = [],$columns = '*') {
+    public static function getResultSetFromSelect($filters = [],$columns = '*') {
         $sql = "SELECT $columns FROM ". static::$tableName. static::getFilters($filters);
-        return $sql;
+        $result = Database::getResultFromQuery($sql);
+        if($result->num_rows === 0){
+            return null;
+        }else{
+            return $result;
+        }
     }
 
     private static function getFilters($filters) {
