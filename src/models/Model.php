@@ -25,6 +25,18 @@ class Model {
         $this->values[$key] = $value;
     }
 
+    public static function get($filters = [], $columns = '*'){
+        $objects = [];
+        $result = static::getResultSetFromSelect($filters, $columns);
+        if($result->num_rows > 0){
+            $class = get_called_class();
+            while($row = $result->fetch_assoc()){
+                array_push($objects, new $class($row));
+            }
+        }
+        return $objects;
+    }
+
     public static function getResultSetFromSelect($filters = [],$columns = '*') {
         $sql = "SELECT $columns FROM ". static::$tableName. static::getFilters($filters);
         $result = Database::getResultFromQuery($sql);
