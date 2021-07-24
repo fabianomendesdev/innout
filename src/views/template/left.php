@@ -19,6 +19,12 @@
                     Relatório Gerencial
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="#">
+                    <i class="icofont-chart-histogram mr-2"></i>
+                    Usuários
+                </a>
+            </li>
         </ul>
     </nav>
 </aside>
