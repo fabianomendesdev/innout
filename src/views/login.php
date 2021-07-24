@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/icofont.min.css">
     <link rel="stylesheet" href="assets/css/login.css">
-    <title>In N' Out</title>
+    <title>In N' Out: Login</title>
 </head>
 <body>
     <form class="form-login" action="#" method="post">
