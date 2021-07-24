@@ -20,14 +20,21 @@
                 <span class="font-weight-light">Out</span> 
                 <i class="icofont-runner-alt-1 ml-2"></i>
             </div>
+            <?php include_once(TEMPLATE_PATH."/messages.php") ?>
             <div class="card-body">
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Informe o e-mail" value="<?= $_POST['email'] ?? ''?>" autofocus>
+                    <input type="email" name="email" id="email" class="form-control <?= isset($errors['email']) ? 'is-invalid' : '' ?>" placeholder="Informe o e-mail" value="<?= $_POST['email'] ?? ''?>" autofocus>
+                    <div class="invalid-feadback">
+                        <?= $errors['email'] ?? '' ?>
+                    </div>
                 </div>    
                 <div class="form-group">
                     <label for="password">Senha</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Informe a senha">
+                    <input type="password" name="password" id="password" class="form-control <?= isset($errors['password']) ? 'is-invalid' : '' ?>" placeholder="Informe a senha">
+                    <div class="invalid-feadback">
+                        <?= $errors['password'] ?? '' ?>
+                    </div>
                 </div>    
             </div>
             <div class="card-footer">
