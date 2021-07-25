@@ -22,10 +22,120 @@ body.hide-sidebar {
 
 header.header {
     grid-area: header;
+    display: flex;
+    background-color: #1976d2;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 
+        0 2px 4px -1px rgba(0, 0, 0, .2),
+        0 4px 4px 0px rgba(0, 0, 0, .14),
+        0 1px 10px 0px rgba(0, 0, 0, .12);
+}
+
+header.header > .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 2rem;
+    flex-basis: 250px;
+    height: 100%;
+}
+
+header.header > .menu-toggle {
+    color: #FFF;
+    cursor: pointer;
+}
+
+header.header > .spacer {
+    flex: 1;
+}
+
+header.header > .dropdown {
+    height: 100%;
+    position: relative;
+}
+
+header.header > .dropdown:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+header.header > .dropdown .dropdown-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.1rem;
+    color: #FFF;
+    cursor: pointer;
+}
+
+header.header > .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+header.header > .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 100%;
+    background-color: #f9f9f9;
+    padding: 15px 0;
+    z-index: 100;
+    box-shadow: 0px 8px 16px  0px rgba(0, 0, 0, .2);
+}
+
+header.header > .dropdown .dropdown-content ul{
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+header.header > .dropdown .dropdown-content li {
+    padding: 7px;    
+}
+
+header.header > .dropdown .dropdown-content li:hover { 
+    background-color: rgba(0, 0, 0, .1);
+}
+
+header.header > .dropdown .dropdown-content a{
+    text-decoration: none;
+    color: #222;
 }
 
 aside.sidebar {
     grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -5px 0px 25px 1px rgba(0, 0, 0, .4);
+    background-color: #FFF;
+}
+
+aside.sidebar > .menu {
+    width: 100%;
+    flex-grow: 1;
+}
+
+aside.sidebar > .menu > ul.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside.sidebar > .menu > ul.nav-list > li.nav-item {
+    margin: 0;
+    padding: 10px 0 10px 25px;
+}
+
+aside.sidebar > .menu > ul.nav-list > li.nav-item a {
+    font-size: 1.2rem;
+    color: #555;
+    text-decoration: none;
+}
+
+aside.sidebar > .menu > ul.nav-list > li.nav-item:hover {
+    background-color: rgba(0, 0, 0, .1);
 }
 
 body.hide-sidebar > aside.sidebar {

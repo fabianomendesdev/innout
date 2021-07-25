@@ -23,4 +23,20 @@
             <i class="icofont-navigation-menu"></i>
         </div>
         <div class="spacer"></div>
+        <div class="dropdown">
+            <div class="dropdown-button">
+                <span class="ml-3">Usuário Mock</span>
+                <i class="icofont-simple-down mx-2"></i>
+            </div>
+            <div class="dropdown-content">
+                <ul class="nav-list">
+                    <a href="logout.php">
+                        <li class="nav-item">
+                            <i class="icofont-logout mr-2"></i>
+                            Sair
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
     </header>
