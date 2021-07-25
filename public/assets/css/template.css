@@ -142,6 +142,8 @@ body.hide-sidebar > aside.sidebar {
     display: none;
 }
 
+
+
 main.content {
     grid-area: content;
 }
