@@ -19,7 +19,6 @@ body.hide-sidebar {
         "footer";
 }
 
-
 header.header {
     grid-area: header;
     display: flex;
@@ -175,6 +174,7 @@ aside.sidebar .info .main {
 
 main.content {
     grid-area: content;
+    background-color: #FFF;
 }
 
 footer.footer {
