@@ -27,4 +27,9 @@
             </li>
         </ul>
     </nav>
+    <div class="sidebar-widgets">
+        <div class="sidebar-widget">
+            
+        </div>
+    </div>
 </aside>
