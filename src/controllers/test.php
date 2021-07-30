@@ -5,12 +5,18 @@ loadModel('WorkingHours');
 
 $wh = WorkingHours::loadFromUserAndDate(1, date('Y-m-d'));
 
-[$t1, $t2, $t3, $t4] = $wh->getTimes();
+$workedIntervalString = $wh->getWorkedInterval()->format('%H:%I:%S');
 
-print_r($t1);
-echo '<br><hr>';
-print_r($t2);
-echo '<br><hr>';
-print_r($t3);
-echo '<br><hr>';
-print_r($t4);
+print_r($workedIntervalString);
+
+echo '<br>';
+
+$lunchInterval = $wh->getLunchInterval()->format('%H:%I:%S');
+
+print_r($lunchInterval);
+
+echo '<br>';
+
+$exitTime = $wh->getExitTime()->format('H:i:s');
+
+print_r($exitTime);
