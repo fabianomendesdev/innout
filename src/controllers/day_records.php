@@ -14,4 +14,3 @@ loadTemplateView('day_records', [
     'today' => $today,
     'records' => $records
 ]);
-

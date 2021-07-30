@@ -17,12 +17,14 @@
                 <span class="record">Entrada 2: <?= $records->time3 ?? '---' ?></span>
                 <span class="record">Saída 2: <?= $records->time4 ?? '---' ?></span>
             </div>
-            <div class="card-footer d-flex justify-content-center">
-                <a href="#" class="btn btn-success btn-lg">
-                    <i class="icofont-check mr-1"></i>
-                    Bater o Ponto
-                </a>
-            </div>
+        </div>
+        <div class="card-footer d-flex justify-content-center">
+            <a href="innout.php" class="btn btn-success btn-lg">
+                <i class="icofont-check mr-1"></i>
+                Bater o Ponto
+            </a>
         </div>
     </div>
+
+     
 </main>
