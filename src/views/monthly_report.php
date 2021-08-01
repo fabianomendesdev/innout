@@ -1,1 +1,3 @@
-<h1>Olá pessoal</h1>
+<?php
+
+print_r($registries);
