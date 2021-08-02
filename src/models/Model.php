@@ -78,8 +78,12 @@ class Model {
         if(count($filters) > 0){
             $sql .= " WHERE";
             foreach($filters as $key => $value){
-                $value = static::getFormatedValue($value);
-                $sql .= " $key = $value";
+                if($key == 'raw'){                    
+                    $sql .= " $value"; 
+                }else{
+                    $value = static::getFormatedValue($value);
+                    $sql .= " $key = $value"; 
+                }
                 if($key !== array_key_last($filters)){
                     $sql .= " and";
                 }

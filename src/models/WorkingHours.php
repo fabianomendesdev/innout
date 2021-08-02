@@ -35,12 +35,24 @@ class WorkingHours extends Model {
         return null;
     }
 
+    public function getActiveClock() {
+        $nextTime = $this->getNextTime();
+        if($nextTime === 'time1' || $nextTime === 'time3'){
+            return 'exitTime';
+        }elseif($nextTime === 'time2' || $nextTime === 'time4'){
+            return 'workedInterval';
+        }else{
+            return null;
+        }
+    }
+
     public function innout($time) {        
         $timeColumn = $this->getNextTime();
         if(!isset($timeColumn)) {
             throw new AppException("Você já fez os 4 batimentos do dia");
         }
         $this->$timeColumn = $time;
+        $this->worked_time = getSecondFromDateInterval($this->getWorkedInterval());
         if($this->id) {
             $this->update();
         }else {
@@ -84,6 +96,25 @@ class WorkingHours extends Model {
             $total = sumIntervals($workday, $this->getLunchInterval()); 
             return $t1->add($total);
         }
+    }
+
+    public static function getMonthlyReport($userId, $date) {
+        $registries = [];
+        $startDate = getFirstDayOfMonth($date)->format('Y-m-d');
+        $endDate = getLastDayOfMonth($date)->format('Y-m-d');
+        
+        $result = static::getResultSetFromSelect([
+            'user_id' => $userId,
+            'raw' => "work_date between '$startDate' AND '$endDate'"
+        ]);
+
+        if(isset($result)){
+            while($row = $result->fetch_assoc()) {
+                $registries[$row['work_date']] = new WorkingHours($row);
+            }
+        }
+
+        return $registries;
     }
 
     private function getTimes() {
