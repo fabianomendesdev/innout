@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('America/Recife');
-setlocale(LC_TIME, 'pt-BR', 'pt_BR.utf-8', 'portuguese');
+setlocale(LC_TIME, 'pt_BR', 'pt-BR.utf-8', 'portuguese');
 
 // Constantes gerais
 define('DAILY_TIME', 60 * 60 * 8);
