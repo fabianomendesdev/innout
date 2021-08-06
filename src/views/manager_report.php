@@ -34,7 +34,7 @@
                 <p class="card-category mb-0">Relação do funcionários que ainda não bateram o ponto</p>
             </div>
             <div class="card-body">
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped table-hover">
                     <thead>
                         <th>Nome</th>
                     </thead>
