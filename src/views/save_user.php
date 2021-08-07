@@ -10,6 +10,7 @@
     ?>
 
     <form action="#" method="post">
+        <input type="hidden" name="id" value="<?= $id ?>">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="name">Nome</label>
@@ -20,7 +21,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Informe o email" class="form-control <?= isset($errors['email']) ? 'is-invalid' : '' ?>" value="<?$email ?>">
+                <input type="text" id="email" name="email" placeholder="Informe o email" class="form-control <?= isset($errors['email']) ? 'is-invalid' : '' ?>" value="<?= $email ?>">
                 <div class="invalid-feedback">
                     <?= $errors['email'] ?? '' ?>
                 </div>
