@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#">
+                <a href="users.php">
                     <i class="icofont-chart-histogram mr-2"></i>
                     Usuários
                 </a>
